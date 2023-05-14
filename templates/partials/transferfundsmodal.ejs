@@ -1,0 +1,32 @@
+<form action="/customers/<%=individualdata.accNo%>/transferFunds" method="post">
+    <div class="modal fade" id="transferfunds" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Transfer Funds To:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="Amount_enter">
+                    <label for="Transferred_To" class="Strong">Beneficiary Account:</label>
+                </div>
+                <select id="Transferred_To" name="Transferred_To" class="w-100 my-5">
+                  <% if(allcustomers.length>0){%>
+                    <% allcustomers.forEach((customer)=>{ %>
+                      <option value="<%=customer.accNo%>"><%=customer.name%></option>
+                      <%})%>
+                    <%}%>
+                  </select>
+                  <div class="Amount_enter">
+                    <strong class="Strong">Enter Amount:</strong>
+                </div>
+              <input type="number" id="Amount_entered" name="Amount_entered" placeholder="Enter Amount in INR" class="w-100 my-5">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <input type="submit" name="submit" class="btn btn-success" value="Transfer Funds"/>
+            </div>
+          </div>
+        </div>
+      </div>
+</form>

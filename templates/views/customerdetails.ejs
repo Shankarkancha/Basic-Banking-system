@@ -1,0 +1,48 @@
+<%- include("../partials/header"); -%>
+<%- include("../partials/navbar"); -%>
+    <main class="container">
+        <div class="row my-5">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="customer_details">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center align-items-center text-white">
+                            <h1 class="text-center my-3 customerdetails_heading bg-dark">Customer Account Details</h1>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <img src="<%= individualdata.imgUrl%>" alt="" class="customer_image">
+                        </div>
+                        <div class="col-md-6 dataheaingcutomer">
+                            <p><strong>Name:</strong><%= individualdata.name%></p>
+                            <p><strong>Date of Birth:</strong><%= individualdata.dob%></p>
+                            <p><strong>Gender:</strong><%= individualdata.gender%></p>
+                            <p><strong>Created on:</strong> <%= createdAt%></p>
+                            <p><strong>Modified on:</strong> <%= modifiedAt%></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m-5 ps-5">
+                            <p><strong>Account ID:</strong> <%= individualdata.accNo%></p>
+                            <p><strong>Email ID:</strong> <%= individualdata.email%></p>
+                            <p><strong>Contact Number:</strong> <%= individualdata.phone%></p>
+                            <p><strong>Resdidential Address:</strong> <%= individualdata.address%></p>
+                            <p><strong>Current Balance:</strong><i class="fa-solid fa-indian-rupee-sign"></i><%=(individualdata.currentBal).toLocaleString('en-IN')%></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <a href="<%=individualdata.accNo%>/transactiondetails"><button class="btn btn-primary mx-5 asize">View Transactions</button></a>
+                            <button class="btn btn-success mx-5 asize" data-bs-toggle="modal" data-bs-target="#Addfunds">Add Funds</button>                            
+                            <button class="btn btn-warning mx-5 asize" data-bs-toggle="modal" data-bs-target="#withdrawfunds">Withdraw Funds</button>                            
+                            <button class="btn btn-danger mx-5 asize" data-bs-toggle="modal" data-bs-target="#transferfunds">Transfer Funds</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include("../partials/addfundsmodal"); -%>
+    <%- include("../partials/withdrawfundsmodal"); -%>
+    <%- include("../partials/transferfundsmodal"); -%>
+    <%- include("../partials/footer"); -%>

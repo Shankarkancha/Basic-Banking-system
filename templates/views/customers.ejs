@@ -1,0 +1,38 @@
+<%- include("../partials/header"); -%>
+<%- include("../partials/navbar"); -%>
+    <main class="container">
+        <div class="row">
+                <div class="col">
+                    <% if(customersdata.length>0){ %>
+                        <h1 class="text-center mt-5">List of Customers</h1>
+                        <div class="my-5 table-responsive">
+                            <table border="1px" align="center" class="table mx-auto">
+                                <tr>
+                                    <th>Sr.No</th>
+                                    <th>Name</th>
+                                    <th>Email ID</th>
+                                    <th>Address</th>
+                                    <th>Current Balance</th>
+                                    <th>Details</th>
+                                </tr>
+                                <% customersdata.forEach((customer,index)=>{ %>
+                                    <tr>
+                                        <td><%=index +1%></td>
+                                        <td><%=customer.name%></td>
+                                        <td><%=customer.email%></td>
+                                        <td><%=customer.address%></td>
+                                        <td><%=(customer.currentBal).toLocaleString('en-IN')%></td>
+                                        <td> <a href="/customerdetails/<%=(customer.accNo).toString()%>"><button class="btn btn-primary asize">View Details</button></a></td>
+                                    </tr>
+                                <%})%>
+                            </table>
+                        </div>
+                        <%}else{%>
+                            <div class="row">
+                                <h1 class="text-center">There are no customers at the moment!</h1>
+                              </div>
+                            <%}%>
+                </div>
+        </div>
+    </main>
+    <%- include("../partials/footer"); -%>

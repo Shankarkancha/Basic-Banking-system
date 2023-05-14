@@ -1,0 +1,22 @@
+<form action="/customers/<%=individualdata.accNo%>/addfunds" method="post">
+    <div class="modal fade" id="Addfunds" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Funds To The Account:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="Amount_enter">
+                    <label for="Amount_entered" class="Strong">Enter Amount:</label>
+                </div>
+              <input type="number" id="Amount_entered" name="Amount_entered" placeholder="Enter Amount in INR" class="w-100 my-5" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <input type="submit" name="submit" class="btn btn-success" value="Add Funds"/>
+            </div>
+          </div>
+        </div>
+      </div>
+</form>
